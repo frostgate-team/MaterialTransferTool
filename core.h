@@ -7,6 +7,24 @@
 
 using namespace std;
 
+#pragma region Material_type_flags
+
+enum MATERIAL_TYPES
+{
+	DEFAULT = 1,
+	ROCK = 2,
+	WOOD = 3,
+	WATER = 4,
+	ORGANIC = 5,
+	METAL = 6,
+	DIRT = 7,
+	DUST = 8,
+	SILENT = 9,
+	GLASS = 10
+};
+
+#pragma endregion
+
 class MatReader
 {
 protected:
@@ -39,5 +57,14 @@ public:
 	/// </summary>
 	string getMaterialType(string mat_file);
 }; 
+
+class TextureMap
+{
+private:
+
+public:
+	void MakeSpecularFromDiffuse(string path, int flags);
+	void UpscaleDiffuseMap(string path);
+};
 
 void parse(string str);

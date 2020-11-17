@@ -78,13 +78,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\openCV\opencv\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\openCV\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\openCV\opencv3\install\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\openCV\opencv3\install\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\openCV\opencv\build\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\openCV\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\openCV\opencv3\install\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\openCV\opencv3\install\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -124,8 +124,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world450d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world450d.lib;opencv_img_hash450d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,14 +141,14 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world450.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world450.lib;opencv_img_hash450.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dds.cpp" />
     <ClCompile Include="matReader.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TextureMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Material\chasm_bridge.mat" />
