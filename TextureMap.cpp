@@ -3,8 +3,11 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#include <opencv2/dnn_superres.hpp>
 
 using namespace cv;
+using namespace dnn;
+using namespace dnn_superres;
 
 #pragma region ConfigurationDefines
 
@@ -66,4 +69,20 @@ void TextureMap::MakeSpecularFromDiffuse(string path, int flags)
 	imshow("Specular_Image", InverseSpecMat);
 
 	int k = waitKey(0); // Wait for a keystroke in the window
+}
+
+void TextureMap::UpscaleDiffuseMap(string path)
+{
+	DnnSuperResImpl rs;
+	Mat origTexture = imread(path, IMREAD_COLOR);
+
+	string modelPath = "pre-trained_models/FSRCNN_x2.pb";
+	rs.readModel(modelPath);
+
+	rs.setModel("fsrcnn", 2);
+
+	Mat img_new;
+	rs.upsample(origTexture, img_new);
+	imwrite("upscale.png", img_new);
+	imshow("Upscaled_image", img_new);
 }

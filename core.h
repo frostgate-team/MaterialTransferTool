@@ -63,6 +63,10 @@ class TextureMap
 private:
 
 public:
+	/* 
+	@param path - path to image file
+	@param flags - enum type of material
+	*/
 	void MakeSpecularFromDiffuse(string path, int flags);
 	void UpscaleDiffuseMap(string path);
 };
