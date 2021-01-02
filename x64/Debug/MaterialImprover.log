@@ -1,6 +1,13 @@
 ﻿  Source.cpp
-C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\Source.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  TextureMap.cpp
   matReader.cpp
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(52,50): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(78,50): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(98,50): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(118,50): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
   Generating Code...
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(81): warning C4715: 'MatReader::getNMapLocation': not all control paths return a value
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(55): warning C4715: 'MatReader::getDiffuseLocation': not all control paths return a value
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(101): warning C4715: 'MatReader::getSpecularLocation': not all control paths return a value
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(35): warning C4715: 'MatReader::getPhysMaterial': not all control paths return a value
+C:\Users\winte\source\repos\MaterialImprover\MaterialImprover\matReader.cpp(121): warning C4715: 'MatReader::getHeightLocation': not all control paths return a value
   MaterialImprover.vcxproj -> C:\Users\winte\source\repos\MaterialImprover\x64\Debug\MaterialImprover.exe

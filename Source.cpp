@@ -1,19 +1,22 @@
-#include "dds.hpp"
 #include "core.h"
 
-void main(void)
+int main(int argc, char **argv)
 {
-	//system("mode 650");
 	MatReader material;
 	TextureMap map;
 
 	string data = "Material/chasm_bridge.mat";
-	string imgPath = "upscale.png"; // Material debug path
-	string scalePath = "Material/Neural/gigantic.png";
+	string imgPath = "Material/Neural/gigantic.png";
+
+	map.UpscaleDiffuseMap(imgPath, DEFAULT);
+	map.MakeSpecularFromDiffuse("upscale.dds", DEFAULT);
 
 	material.ReadAllLines(data);
-	material.getPhysMaterial(data);
+	cout << material.getPhysMaterial() << endl;
+	cout << material.getDiffuseLocation() << endl;
+	cout << material.getNMapLocation() << endl;
+	cout << material.getSpecularLocation() << endl;
+	cout << material.getHeightLocation() << endl;
 
-	map.MakeSpecularFromDiffuse(imgPath, DEFAULT);
-	//map.UpscaleDiffuseMap(scalePath);
+	return 0;
 }

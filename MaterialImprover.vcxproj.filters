@@ -18,9 +18,6 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dds.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="matReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -42,7 +39,7 @@
     <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dds.hpp">
+    <ClInclude Include="MaterialHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

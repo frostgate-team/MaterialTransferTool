@@ -1,4 +1,4 @@
-#include "core.h"
+#include "MaterialHandler.h"
 
 void MatReader::ReadAllLines(string mat_file)
 {
@@ -6,46 +6,116 @@ void MatReader::ReadAllLines(string mat_file)
 	string str;
 	if (infile.is_open())
 	{
+		ofile = true;
 		while (!infile.eof())
 		{
 			getline(infile, str);
-			cout << str << endl;
+			text << str + "\n";
 		}
 	}
 	else
-		cout << "[ERROR] file does not exist or corrupted"<<endl;
+		throw exception("[ERROR] file does not exist or corrupted");
 }
 
-string MatReader::getPhysMaterial(string mat_file)
+string MatReader::getPhysMaterial()
 {
-	ifstream infile(mat_file);
-	string str, mat = "PhysicsMaterial=";
-	if (infile.is_open())
+	text.clear();
+	text.seekg(start);
+	string line;
+	vector<string> seglist;
+	while (getline(text, line, '"'))
 	{
-		while (!infile.eof())
-		{
-			getline(infile, str);
-			parse(str);
-		}
+		seglist.push_back(line);
 	}
-	return "aa";
+	for (size_t i = 1; i < seglist.size(); i++)
+	{
+		if (seglist[i - 1] == " PhysicsMaterial=")
+			return seglist[i];
+	}
 }
 
-void parse(string str)
+string MatReader::getDiffuseLocation()
 {
-	string line = str;
-
-	// Vector of string to save tokens 
-	vector<string> tokens;
-
-	stringstream check1(line);
-	string intermediate;
-
-	while (getline(check1, intermediate, ' '))
+	text.clear();
+	text.seekg(start);
+	string line;
+	vector<string> seglist;
+	bool crutch = false;
+	while (getline(text, line, '"'))
 	{
-		tokens.push_back(intermediate);
+		seglist.push_back(line);
 	}
+	for (size_t i = 1; i < seglist.size(); i++)
+	{
+		if (seglist[i] == (" />\n    <TextureUnits>\n        <Diffuse MipMaps="))
+			crutch = true;
+		if (seglist[i - 1] == " File=" & crutch == true)
+			return seglist[i];
+	}
+}
 
-	/*for (int i = 0; i < tokens.size(); i++)
-		cout << tokens[i] << '\n';*/
+/******************************************\
+|**************CRUTCH ZONE*****************|
+\******************************************/
+
+//TODO: REMOVE CRUTCHES
+
+string MatReader::getNMapLocation()
+{
+	text.clear();
+	text.seekg(start);
+	string line;
+	vector<string> seglist;
+	bool crutch = false;
+	while (getline(text, line, '"'))
+	{
+		seglist.push_back(line);
+	}
+	for (size_t i = 1; i < seglist.size(); i++)
+	{
+		if (seglist[i] == (" />\n        <NMap MipMaps="))
+			crutch = true;
+		if (seglist[i - 1] == " File=" & crutch == true)
+			return seglist[i];
+	}
+}
+
+string MatReader::getSpecularLocation()
+{
+	text.clear();
+	text.seekg(start);
+	string line;
+	vector<string> seglist;
+	bool crutch = false;
+	while (getline(text, line, '"'))
+	{
+		seglist.push_back(line);
+	}
+	for (size_t i = 1; i < seglist.size(); i++)
+	{
+		if (seglist[i] == (" />\n        <Specular MipMaps="))
+			crutch = true;
+		if (seglist[i - 1] == " File=" & crutch == true)
+			return seglist[i];
+	}
+}
+
+string MatReader::getHeightLocation()
+{
+	text.clear();
+	text.seekg(start);
+	string line;
+	vector<string> seglist;
+	bool crutch = false;
+	while (getline(text, line, '"'))
+	{
+		seglist.push_back(line);
+	}
+	for (size_t i = 1; i < seglist.size(); i++)
+	{
+		if (seglist[i] == (" />\n        <Height MipMaps="))
+			crutch = true;
+		if (seglist[i - 1] == " File=" & crutch == true)
+			return seglist[i];
+	}
 }
