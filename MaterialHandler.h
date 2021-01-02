@@ -15,26 +15,19 @@ class MatReader
 {
 protected:
 	/// <summary>
-	/// Material name
+	/// Stringstream from file
 	/// </summary>
-	string name;
-	/// <summary>
-	/// material path
-	/// </summary>
-	string path;
-
 	stringstream text;
+	/// <summary>
+	/// Stringstream start position
+	/// </summary>
 	const stringstream::pos_type start{ text.tellg() };
-
+	/// <returns> true if file is open</returns>
 	bool ofile = false;
-
-	string PhysicsMaterial;
-	string Diffuse;
-	string NMap;
-	string Specular;
+	void clearTextStream();
 public:
 	MatReader() {};
-	~MatReader() { name = ""; path = ""; }
+	~MatReader() {};
 
 	/// <summary>
 	/// Read all lines in .mat document by string
@@ -45,15 +38,27 @@ public:
 	/// </summary>
 	string getPhysMaterial();
 	/// <summary>
-	/// Getting texture file path
+	/// Getting diffuse file path
 	/// </summary>
 	string getDiffuseLocation();
+	/// <summary>
+	/// Getting normal map file path
+	/// </summary>
 	string getNMapLocation();
+	/// <summary>
+	/// Getting specular map file path
+	/// </summary>
 	string getSpecularLocation();
+	/// <summary>
+	/// Getting height map file path
+	/// </summary>
 	string getHeightLocation();
+	/// <summary>
+	/// Getting material type
+	/// </summary>
+	string getMaterialType(); // Don't use this !! Even if someone threatens you with death.
+	// TODO: fix getMaterialType()
 };
-
-#pragma once
 
 #pragma region Material_type_flags
 

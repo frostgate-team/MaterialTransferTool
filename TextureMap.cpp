@@ -53,9 +53,9 @@ void TextureMap::MakeSpecularFromDiffuse(string path, const MATERIAL_TYPES flags
 void TextureMap::UpscaleDiffuseMap(string path, int flags)
 {
 	Image img(path);
-	//img.density(3);
-	img.adaptiveResize("2048x2048");
+	string x = std::to_string(img.columns() * 2);
+	string y = std::to_string(img.rows() * 2);
+	img.adaptiveResize(x+"x"+y);
 	img.interpolate();
 	img.write("upscale.dds");
-
 }

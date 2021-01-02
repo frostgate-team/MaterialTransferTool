@@ -1,5 +1,10 @@
 #include "MaterialHandler.h"
 
+void MatReader::clearTextStream()
+{
+	text.clear();
+}
+
 void MatReader::ReadAllLines(string mat_file)
 {
 	ifstream infile(mat_file);
@@ -23,16 +28,50 @@ string MatReader::getPhysMaterial()
 	text.seekg(start);
 	string line;
 	vector<string> seglist;
+	if (ofile == false)
+		throw exception("File not open");
 	while (getline(text, line, '"'))
 	{
+		if (line == " />")
+			break;
 		seglist.push_back(line);
 	}
 	for (size_t i = 1; i < seglist.size(); i++)
 	{
 		if (seglist[i - 1] == " PhysicsMaterial=")
 			return seglist[i];
+		if (i == seglist.size()-1)
+			return "NONE";
 	}
 }
+
+string MatReader::getMaterialType()
+{
+	text.clear();
+	text.seekg(start);
+	string line;
+	vector<string> seglist;
+	if (ofile == false)
+		throw exception("File not open");
+	while (getline(text, line, '"'))
+	{
+		if (line == " />")
+			break;
+		seglist.push_back(line);
+	}
+	for (size_t i = 1; i < seglist.size(); i++)
+	{
+		if (seglist[i - 1] == " Type=")
+			return seglist[i];
+	}
+	throw exception("There is no MaterialType configuration in this file!");
+}
+
+/******************************************\
+|**************CRUTCH ZONE*****************|
+\******************************************/
+
+//TODO: REMOVE ALL THE CRUTCHES
 
 string MatReader::getDiffuseLocation()
 {
@@ -41,6 +80,8 @@ string MatReader::getDiffuseLocation()
 	string line;
 	vector<string> seglist;
 	bool crutch = false;
+	if (ofile == false)
+		throw exception("File not open");
 	while (getline(text, line, '"'))
 	{
 		seglist.push_back(line);
@@ -51,14 +92,10 @@ string MatReader::getDiffuseLocation()
 			crutch = true;
 		if (seglist[i - 1] == " File=" & crutch == true)
 			return seglist[i];
+		if (i == seglist.size()-1)
+			return "NONE";
 	}
 }
-
-/******************************************\
-|**************CRUTCH ZONE*****************|
-\******************************************/
-
-//TODO: REMOVE CRUTCHES
 
 string MatReader::getNMapLocation()
 {
@@ -67,6 +104,8 @@ string MatReader::getNMapLocation()
 	string line;
 	vector<string> seglist;
 	bool crutch = false;
+	if (ofile == false)
+		throw exception("File not open");
 	while (getline(text, line, '"'))
 	{
 		seglist.push_back(line);
@@ -77,6 +116,8 @@ string MatReader::getNMapLocation()
 			crutch = true;
 		if (seglist[i - 1] == " File=" & crutch == true)
 			return seglist[i];
+		if (i == seglist.size()-1)
+			return "NONE";
 	}
 }
 
@@ -87,6 +128,8 @@ string MatReader::getSpecularLocation()
 	string line;
 	vector<string> seglist;
 	bool crutch = false;
+	if (ofile == false)
+		throw exception("File not open");
 	while (getline(text, line, '"'))
 	{
 		seglist.push_back(line);
@@ -97,6 +140,8 @@ string MatReader::getSpecularLocation()
 			crutch = true;
 		if (seglist[i - 1] == " File=" & crutch == true)
 			return seglist[i];
+		if (i == seglist.size()-1)
+			return "NONE";
 	}
 }
 
@@ -107,6 +152,8 @@ string MatReader::getHeightLocation()
 	string line;
 	vector<string> seglist;
 	bool crutch = false;
+	if (ofile == false)
+		throw exception("File not open");
 	while (getline(text, line, '"'))
 	{
 		seglist.push_back(line);
@@ -117,5 +164,7 @@ string MatReader::getHeightLocation()
 			crutch = true;
 		if (seglist[i - 1] == " File=" & crutch == true)
 			return seglist[i];
+		if (i == seglist.size()-1)
+			return "NONE";
 	}
 }
