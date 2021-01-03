@@ -1,9 +1,9 @@
 <Material>
     <Main Type="soliddiffuse" DepthTest="true" ForceFullScaleTextures="false" UVSubDivs="1 1" UseAlpha="false" PhysicsMaterial="Default" BlendMode="Add" />
     <TextureUnits>
-        <Diffuse MipMaps="false" Compress="true" File="Material/example/elevator.dds" Type="2D" Wrap="Repeat" AnimMode="None" AnimFrameTime="0" AnimStartTime="0" />
-        <NMap MipMaps="false" Compress="true" File="Material/example/elevator_nrm.dds" Type="2D" Wrap="Repeat" AnimMode="None" AnimFrameTime="0" AnimStartTime="0" />
-        <Specular MipMaps="false" Compress="true" File="Material/example/elevator_spec.dds" Type="2D" Wrap="Repeat" AnimMode="None" AnimFrameTime="0" AnimStartTime="0" />
+        <Diffuse MipMaps="false" Compress="true" File="Material/example/pipes.dds" Type="2D" Wrap="Repeat" AnimMode="None" AnimFrameTime="0" AnimStartTime="0" />
+        <NMap MipMaps="false" Compress="true" File="Material/example/pipes_nrm.dds" Type="2D" Wrap="Repeat" AnimMode="None" AnimFrameTime="0" AnimStartTime="0" />
+        <Specular MipMaps="false" Compress="true" File="Material/example/pipes_spec.dds" Type="2D" Wrap="Repeat" AnimMode="None" AnimFrameTime="0" AnimStartTime="0" />
     </TextureUnits>
     <SpecificVariables>
         <Var ObjectId="4294967295" Name="IlluminationBrightness" Value="1" />

@@ -75,20 +75,17 @@ typedef enum
 	DEFAULT = 1,
 	ROCK = 2,
 	WOOD = 3,
-	WATER = 4,
-	ORGANIC = 5,
-	METAL = 6,
-	DIRT = 7,
-	DUST = 8,
-	SILENT = 9,
-	GLASS = 10
+	ORGANIC = 4,
+	METAL = 5,
+	DUST = 6,
+	GLASS = 7
 }MATERIAL_TYPES;
 
 #pragma endregion
 /// <summary>
 /// Basic texture handling class
 /// </summary>
-class TextureMap : public MatReader
+class TextureMap
 {
 private:
 

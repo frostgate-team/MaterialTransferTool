@@ -1,0 +1,8 @@
+<Material>
+    <Main DepthTest="True" HeightMapScale="0.05" PhysicsMaterial="Generic_Soft" Type="SolidDiffuse" />
+    <TextureUnits>
+        <Diffuse AnimFrameTime="" AnimMode="" File="pile_of_saw_dust_small.dds" Mipmaps="true" Type="2D" Wrap="Repeat" />
+        <NMap AnimFrameTime="" AnimMode="" File="pile_of_saw_dust_small_nrm.dds" Mipmaps="true" Type="2D" Wrap="Repeat" />
+        <Alpha AnimFrameTime="" AnimMode="" File="pile_of_saw_dust_small_alpha.tga" Mipmaps="true" Type="2D" Wrap="Repeat" />
+    </TextureUnits>
+</Material>
