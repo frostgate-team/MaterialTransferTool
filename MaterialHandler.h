@@ -24,7 +24,6 @@ protected:
 	const stringstream::pos_type start{ text.tellg() };
 	/// <returns> true if file is open</returns>
 	bool ofile = false;
-	void clearTextStream();
 public:
 	MatReader() {};
 	~MatReader() {};
@@ -58,6 +57,15 @@ public:
 	/// </summary>
 	string getMaterialType(); // Don't use this !! Even if someone threatens you with death.
 	// TODO: fix getMaterialType()
+	
+	/// <summary>
+	/// Prints all stringstream content
+	/// </summary>
+	void textStreamDebug();
+	/// <summary>
+	/// Clear the entire stringstream content
+	/// </summary>
+	void clearTextStream();
 };
 
 #pragma region Material_type_flags
@@ -80,7 +88,7 @@ typedef enum
 /// <summary>
 /// Basic texture handling class
 /// </summary>
-class TextureMap
+class TextureMap : public MatReader
 {
 private:
 
@@ -96,5 +104,5 @@ public:
 	/// </summary>
 	/// <param name="path">- file path</param>
 	/// <param name="flags">- enum material types</param>
-	void UpscaleDiffuseMap(string path, int flags);
+	void UpscaleDiffuseMap(string path);
 };

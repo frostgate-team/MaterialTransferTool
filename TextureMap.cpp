@@ -47,15 +47,18 @@ void TextureMap::MakeSpecularFromDiffuse(string path, const MATERIAL_TYPES flags
 		upscaleImage.level(WOOD_BLACK_C, WOOD_WHITE_C, 0.4);
 		break;
 	}
-	upscaleImage.write("specular.dds"); 
+	for (size_t i{}; i < 4; i++)
+		path.pop_back();
+
+	upscaleImage.write(path+"_spec.dds"); 
 }
 
-void TextureMap::UpscaleDiffuseMap(string path, int flags)
+void TextureMap::UpscaleDiffuseMap(string path)
 {
 	Image img(path);
 	string x = std::to_string(img.columns() * 2);
 	string y = std::to_string(img.rows() * 2);
 	img.adaptiveResize(x+"x"+y);
 	img.interpolate();
-	img.write("upscale.dds");
+	img.write(path);
 }

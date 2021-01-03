@@ -3,6 +3,7 @@
 void MatReader::clearTextStream()
 {
 	text.clear();
+	text.str("");
 }
 
 void MatReader::ReadAllLines(string mat_file)
@@ -65,6 +66,11 @@ string MatReader::getMaterialType()
 			return seglist[i];
 	}
 	throw exception("There is no MaterialType configuration in this file!");
+}
+
+void MatReader::textStreamDebug()
+{
+	cout << text.str();
 }
 
 /******************************************\
