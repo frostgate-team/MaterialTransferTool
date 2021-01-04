@@ -1,0 +1,2 @@
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\x64\Debug\MaterialTransferTool.ToolWindow.resources
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\x64\Debug\MaterialTransferTool.vcxproj.GenerateResource.cache
