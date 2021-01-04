@@ -55,13 +55,9 @@ public:
 	/// </summary>
 	string getHeightLocation();
 	/// <summary>
-	/// Getting material type
+	/// Getting alpha map location from file
 	/// </summary>
-	string getMaterialType(); // Don't use this !! Even if someone threatens you with death.
-	// TODO: fix getMaterialType()
-
 	string getAlphaLocation();
-	
 	/// <summary>
 	/// Prints all stringstream content
 	/// </summary>
@@ -70,7 +66,11 @@ public:
 	/// Clear the entire stringstream content
 	/// </summary>
 	void clearTextStream();
-
+	/// <summary>
+	/// Gets absolute file path
+	/// </summary>
+	/// <param name="str">- CLI string</param>
+	/// <param name="str2">- std::string path</param>
 	string getAbsoluteFilePath(string str, string str2);
 };
 

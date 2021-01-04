@@ -68,28 +68,6 @@ string MatReader::getPhysMaterial()
 	}
 }
 
-string MatReader::getMaterialType()
-{
-	text.clear();
-	text.seekg(start);
-	string line;
-	vector<string> seglist;
-	if (ofile == false)
-		throw exception("File not open");
-	while (getline(text, line, '"'))
-	{
-		if (line == " />")
-			break;
-		seglist.push_back(line);
-	}
-	for (size_t i = 1; i < seglist.size(); i++)
-	{
-		if (seglist[i - 1] == " Type=")
-			return seglist[i];
-	}
-	throw exception("There is no MaterialType configuration in this file!");
-}
-
 void MatReader::textStreamDebug()
 {
 	cout << text.str();

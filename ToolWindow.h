@@ -3,6 +3,8 @@
 #include "core.h"
 #include <msclr\marshal_cppstd.h>
 
+TextureMap material;
+
 namespace MaterialTransferTool {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -149,20 +151,20 @@ namespace MaterialTransferTool {
 			// newToolStripMenuItem
 			// 
 			this->newToolStripMenuItem->Name = L"newToolStripMenuItem";
-			this->newToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->newToolStripMenuItem->Size = System::Drawing::Size(107, 22);
 			this->newToolStripMenuItem->Text = L"Open";
 			this->newToolStripMenuItem->Click += gcnew System::EventHandler(this, &ToolWindow::newToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(107, 22);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// quitToolStripMenuItem
 			// 
 			this->quitToolStripMenuItem->Name = L"quitToolStripMenuItem";
-			this->quitToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->quitToolStripMenuItem->Size = System::Drawing::Size(107, 22);
 			this->quitToolStripMenuItem->Text = L"Quit";
 			this->quitToolStripMenuItem->Click += gcnew System::EventHandler(this, &ToolWindow::quitToolStripMenuItem_Click);
 			// 
@@ -172,6 +174,7 @@ namespace MaterialTransferTool {
 			this->pictureBox1->Location = System::Drawing::Point(6, 19);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(344, 329);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 2;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -401,6 +404,7 @@ namespace MaterialTransferTool {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(747, 450);
+			this->ControlBox = false;
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
@@ -431,7 +435,6 @@ namespace MaterialTransferTool {
 	}
 private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	MatReader materialReader;
-	TextureMap material;
 	OpenFileDialog^ ofd = gcnew OpenFileDialog();
 	ofd->Filter = "HPL Materials(*.mat)|*.mat";
 	if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
@@ -451,18 +454,21 @@ private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System:
 		// Sets path to height to textBox4
 		textBox4->Text = msclr::interop::marshal_as<String^>(materialReader.getAbsoluteFilePath(
 			msclr::interop::marshal_as<std::string>(filename), materialReader.getHeightLocation()));
+		// Sets path to Alpha to textBox5
+		textBox5->Text = msclr::interop::marshal_as<String^>(materialReader.getAbsoluteFilePath(
+			msclr::interop::marshal_as<std::string>(filename), materialReader.getAlphaLocation()));
 		// Creates hidden image element to show it in pictureBox
-		/*material.createHiddenLinkImage(materialReader.getAbsoluteFilePath(
-			msclr::interop::marshal_as<std::string>(filename),
-			materialReader.getDiffuseLocation()));*/
+		material.createHiddenLinkImage(materialReader.getAbsoluteFilePath(
+			msclr::interop::marshal_as<std::string>(filename), materialReader.getDiffuseLocation()));
+		// Setes physical material type to label7 on textBox window
 		label7->Text = msclr::interop::marshal_as<String^>(materialReader.getPhysMaterial());
-		/*pictureBox1->Image = pictureBox1->Image->FromFile(msclr::interop::marshal_as<String^>(materialReader.getAbsoluteFilePath(
-			msclr::interop::marshal_as<std::string>(filename), material.getHashPath())));*/
+		// Sets prewiev to image box
+		pictureBox1->Image = pictureBox1->Image->FromFile(msclr::interop::marshal_as<String^>(material.getHashPath()));
 	}
 }
 private: System::Void quitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	//remove(material.getHashPath().c_str());
 	Application::Exit();
 }
+
 };
 }
