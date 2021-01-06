@@ -1,4 +1,4 @@
-﻿  ToolWindow.cpp
+﻿  TextureMap.cpp
 C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(463,30): warning C4251: 'Magick::DrawableBezier::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableBezier'
           with
           [
@@ -310,5 +310,642 @@ C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1543,24): warning
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
 C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1840,25): warning C4251: 'Magick::x11DisplayImage::_display': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::x11DisplayImage'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\TextureMap.cpp(85,59): warning C4267: 'initializing': conversion from 'size_t' to 'uint16_t', possible loss of data
+  ToolWindow.cpp
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(463,30): warning C4251: 'Magick::DrawableBezier::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableBezier'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(572,18): warning C4251: 'Magick::DrawablePushClipPath::_id': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushClipPath'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(600,20): warning C4251: 'Magick::DrawableClipPath::_id': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableClipPath'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(844,23): warning C4251: 'Magick::DrawableDensity::_density': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableDensity'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(986,21): warning C4251: 'Magick::DrawableFillPatternUrl::_url': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFillPatternUrl'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1081,22): warning C4251: 'Magick::DrawableFont::_font': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1082,24): warning C4251: 'Magick::DrawableFont::_family': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1198,18): warning C4251: 'Magick::DrawablePath::_path': class 'std::vector<Magick::VPath,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePath'
+          with
+          [
+              _Ty=Magick::VPath
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(207): message : see declaration of 'std::vector<Magick::VPath,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::VPath
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1287,30): warning C4251: 'Magick::DrawablePolygon::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolygon'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1307,30): warning C4251: 'Magick::DrawablePolyline::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolyline'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1391,26): warning C4251: 'Magick::DrawablePushPattern::_id': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushPattern'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1877,19): warning C4251: 'Magick::DrawableStrokePatternUrl::_url': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableStrokePatternUrl'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2053,20): warning C4251: 'Magick::DrawableText::_text': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2054,24): warning C4251: 'Magick::DrawableText::_encoding': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2489,31): warning C4251: 'Magick::PathArcAbs::_coordinates': class 'std::vector<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcAbs'
+          with
+          [
+              _Ty=Magick::PathArcArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2454): message : see declaration of 'std::vector<Magick::PathArcArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathArcArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2511,31): warning C4251: 'Magick::PathArcRel::_coordinates': class 'std::vector<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcRel'
+          with
+          [
+              _Ty=Magick::PathArcArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2454): message : see declaration of 'std::vector<Magick::PathArcArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathArcArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2662,28): warning C4251: 'Magick::PathCurvetoAbs::_args': class 'std::vector<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoAbs'
+          with
+          [
+              _Ty=Magick::PathCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2628): message : see declaration of 'std::vector<Magick::PathCurvetoArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2685,28): warning C4251: 'Magick::PathCurvetoRel::_args': class 'std::vector<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoRel'
+          with
+          [
+              _Ty=Magick::PathCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2628): message : see declaration of 'std::vector<Magick::PathCurvetoArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2709,30): warning C4251: 'Magick::PathSmoothCurvetoAbs::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoAbs'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2734,30): warning C4251: 'Magick::PathSmoothCurvetoRel::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoRel'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2843,37): warning C4251: 'Magick::PathQuadraticCurvetoAbs::_args': class 'std::vector<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoAbs'
+          with
+          [
+              _Ty=Magick::PathQuadraticCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2809): message : see declaration of 'std::vector<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathQuadraticCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2867,37): warning C4251: 'Magick::PathQuadraticCurvetoRel::_args': class 'std::vector<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoRel'
+          with
+          [
+              _Ty=Magick::PathQuadraticCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2809): message : see declaration of 'std::vector<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathQuadraticCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2891,30): warning C4251: 'Magick::PathSmoothQuadraticCurvetoAbs::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoAbs'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2915,30): warning C4251: 'Magick::PathSmoothQuadraticCurvetoRel::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoRel'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2943,30): warning C4251: 'Magick::PathLinetoAbs::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoAbs'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2967,30): warning C4251: 'Magick::PathLinetoRel::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoRel'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(3109,30): warning C4251: 'Magick::PathMovetoAbs::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoAbs'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(3133,30): warning C4251: 'Magick::PathMovetoRel::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoRel'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Exception.h(23,3): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'Magick::Exception'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\vcruntime_exception.h(48): message : see declaration of 'std::exception'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Exception.h(22): message : see declaration of 'Magick::Exception'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Exception.h(56,22): warning C4251: 'Magick::Exception::_what': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Exception'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(70,38): warning C4251: 'Magick::ChannelMoments::_huInvariants': class 'std::vector<double,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ChannelMoments'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(70): message : see declaration of 'std::vector<double,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(125,37): warning C4251: 'Magick::ChannelPerceptualHash::_srgbHuPhash': class 'std::vector<double,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ChannelPerceptualHash'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(70): message : see declaration of 'std::vector<double,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(126,37): warning C4251: 'Magick::ChannelPerceptualHash::_hclpHuPhash': class 'std::vector<double,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ChannelPerceptualHash'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(70): message : see declaration of 'std::vector<double,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(240,42): warning C4251: 'Magick::ImageMoments::_channels': class 'std::vector<Magick::ChannelMoments,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ImageMoments'
+          with
+          [
+              _Ty=Magick::ChannelMoments
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(240): message : see declaration of 'std::vector<Magick::ChannelMoments,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::ChannelMoments
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(278,49): warning C4251: 'Magick::ImagePerceptualHash::_channels': class 'std::vector<Magick::ChannelPerceptualHash,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ImagePerceptualHash'
+          with
+          [
+              _Ty=Magick::ChannelPerceptualHash
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(278): message : see declaration of 'std::vector<Magick::ChannelPerceptualHash,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::ChannelPerceptualHash
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(303,45): warning C4251: 'Magick::ImageStatistics::_channels': class 'std::vector<Magick::ChannelStatistics,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ImageStatistics'
+          with
+          [
+              _Ty=Magick::ChannelStatistics
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(303): message : see declaration of 'std::vector<Magick::ChannelStatistics,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::ChannelStatistics
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\CoderInfo.h(76,29): warning C4251: 'Magick::CoderInfo::_description': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\CoderInfo.h(81,26): warning C4251: 'Magick::CoderInfo::_mimeType': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\CoderInfo.h(82,24): warning C4251: 'Magick::CoderInfo::_module': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\CoderInfo.h(83,22): warning C4251: 'Magick::CoderInfo::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(98,26): warning C4251: 'Magick::Montage::_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(100,22): warning C4251: 'Magick::Montage::_font': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(103,23): warning C4251: 'Magick::Montage::_label': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(107,25): warning C4251: 'Magick::Montage::_texture': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(109,23): warning C4251: 'Magick::Montage::_title': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(132,30): warning C4251: 'Magick::annotateImage::_text': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::annotateImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(211,23): warning C4251: 'Magick::cdlImage::_cdl': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::cdlImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(271,25): warning C4251: 'Magick::commentImage::_comment': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::commentImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(383,31): warning C4251: 'Magick::drawImage::_drawableList': class 'std::vector<Magick::Drawable,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::drawImage'
+          with
+          [
+              _Ty=Magick::Drawable
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(144): message : see declaration of 'std::vector<Magick::Drawable,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Drawable
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(662,23): warning C4251: 'Magick::labelImage::_label': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::labelImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1292,35): warning C4251: 'Magick::backgroundTextureImage::_backgroundTexture': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::backgroundTextureImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1471,26): warning C4251: 'Magick::fileNameImage::_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fileNameImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1495,22): warning C4251: 'Magick::fontImage::_font': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fontImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1543,24): warning C4251: 'Magick::magickImage::_magick': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::magickImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1840,25): warning C4251: 'Magick::x11DisplayImage::_display': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::x11DisplayImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  matReader.cpp
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(463,30): warning C4251: 'Magick::DrawableBezier::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableBezier'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(572,18): warning C4251: 'Magick::DrawablePushClipPath::_id': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushClipPath'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(600,20): warning C4251: 'Magick::DrawableClipPath::_id': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableClipPath'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(844,23): warning C4251: 'Magick::DrawableDensity::_density': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableDensity'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(986,21): warning C4251: 'Magick::DrawableFillPatternUrl::_url': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFillPatternUrl'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1081,22): warning C4251: 'Magick::DrawableFont::_font': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1082,24): warning C4251: 'Magick::DrawableFont::_family': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableFont'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1198,18): warning C4251: 'Magick::DrawablePath::_path': class 'std::vector<Magick::VPath,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePath'
+          with
+          [
+              _Ty=Magick::VPath
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(207): message : see declaration of 'std::vector<Magick::VPath,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::VPath
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1287,30): warning C4251: 'Magick::DrawablePolygon::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolygon'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1307,30): warning C4251: 'Magick::DrawablePolyline::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePolyline'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1391,26): warning C4251: 'Magick::DrawablePushPattern::_id': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawablePushPattern'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(1877,19): warning C4251: 'Magick::DrawableStrokePatternUrl::_url': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableStrokePatternUrl'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2053,20): warning C4251: 'Magick::DrawableText::_text': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2054,24): warning C4251: 'Magick::DrawableText::_encoding': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::DrawableText'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2489,31): warning C4251: 'Magick::PathArcAbs::_coordinates': class 'std::vector<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcAbs'
+          with
+          [
+              _Ty=Magick::PathArcArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2454): message : see declaration of 'std::vector<Magick::PathArcArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathArcArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2511,31): warning C4251: 'Magick::PathArcRel::_coordinates': class 'std::vector<Magick::PathArcArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathArcRel'
+          with
+          [
+              _Ty=Magick::PathArcArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2454): message : see declaration of 'std::vector<Magick::PathArcArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathArcArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2662,28): warning C4251: 'Magick::PathCurvetoAbs::_args': class 'std::vector<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoAbs'
+          with
+          [
+              _Ty=Magick::PathCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2628): message : see declaration of 'std::vector<Magick::PathCurvetoArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2685,28): warning C4251: 'Magick::PathCurvetoRel::_args': class 'std::vector<Magick::PathCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathCurvetoRel'
+          with
+          [
+              _Ty=Magick::PathCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2628): message : see declaration of 'std::vector<Magick::PathCurvetoArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2709,30): warning C4251: 'Magick::PathSmoothCurvetoAbs::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoAbs'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2734,30): warning C4251: 'Magick::PathSmoothCurvetoRel::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothCurvetoRel'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2843,37): warning C4251: 'Magick::PathQuadraticCurvetoAbs::_args': class 'std::vector<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoAbs'
+          with
+          [
+              _Ty=Magick::PathQuadraticCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2809): message : see declaration of 'std::vector<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathQuadraticCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2867,37): warning C4251: 'Magick::PathQuadraticCurvetoRel::_args': class 'std::vector<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathQuadraticCurvetoRel'
+          with
+          [
+              _Ty=Magick::PathQuadraticCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2809): message : see declaration of 'std::vector<Magick::PathQuadraticCurvetoArgs,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::PathQuadraticCurvetoArgs
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2891,30): warning C4251: 'Magick::PathSmoothQuadraticCurvetoAbs::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoAbs'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2915,30): warning C4251: 'Magick::PathSmoothQuadraticCurvetoRel::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathSmoothQuadraticCurvetoRel'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2943,30): warning C4251: 'Magick::PathLinetoAbs::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoAbs'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(2967,30): warning C4251: 'Magick::PathLinetoRel::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathLinetoRel'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(3109,30): warning C4251: 'Magick::PathMovetoAbs::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoAbs'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(3133,30): warning C4251: 'Magick::PathMovetoRel::_coordinates': class 'std::vector<Magick::Coordinate,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::PathMovetoRel'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(71): message : see declaration of 'std::vector<Magick::Coordinate,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Coordinate
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Exception.h(23,3): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface class 'Magick::Exception'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\vcruntime_exception.h(48): message : see declaration of 'std::exception'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Exception.h(22): message : see declaration of 'Magick::Exception'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Exception.h(56,22): warning C4251: 'Magick::Exception::_what': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Exception'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(70,38): warning C4251: 'Magick::ChannelMoments::_huInvariants': class 'std::vector<double,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ChannelMoments'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(70): message : see declaration of 'std::vector<double,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(125,37): warning C4251: 'Magick::ChannelPerceptualHash::_srgbHuPhash': class 'std::vector<double,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ChannelPerceptualHash'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(70): message : see declaration of 'std::vector<double,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(126,37): warning C4251: 'Magick::ChannelPerceptualHash::_hclpHuPhash': class 'std::vector<double,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ChannelPerceptualHash'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(70): message : see declaration of 'std::vector<double,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=double
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(240,42): warning C4251: 'Magick::ImageMoments::_channels': class 'std::vector<Magick::ChannelMoments,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ImageMoments'
+          with
+          [
+              _Ty=Magick::ChannelMoments
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(240): message : see declaration of 'std::vector<Magick::ChannelMoments,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::ChannelMoments
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(278,49): warning C4251: 'Magick::ImagePerceptualHash::_channels': class 'std::vector<Magick::ChannelPerceptualHash,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ImagePerceptualHash'
+          with
+          [
+              _Ty=Magick::ChannelPerceptualHash
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(278): message : see declaration of 'std::vector<Magick::ChannelPerceptualHash,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::ChannelPerceptualHash
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(303,45): warning C4251: 'Magick::ImageStatistics::_channels': class 'std::vector<Magick::ChannelStatistics,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::ImageStatistics'
+          with
+          [
+              _Ty=Magick::ChannelStatistics
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Statistic.h(303): message : see declaration of 'std::vector<Magick::ChannelStatistics,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::ChannelStatistics
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\CoderInfo.h(76,29): warning C4251: 'Magick::CoderInfo::_description': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\CoderInfo.h(81,26): warning C4251: 'Magick::CoderInfo::_mimeType': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\CoderInfo.h(82,24): warning C4251: 'Magick::CoderInfo::_module': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\CoderInfo.h(83,22): warning C4251: 'Magick::CoderInfo::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::CoderInfo'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(98,26): warning C4251: 'Magick::Montage::_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(100,22): warning C4251: 'Magick::Montage::_font': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(103,23): warning C4251: 'Magick::Montage::_label': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(107,25): warning C4251: 'Magick::Montage::_texture': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Montage.h(109,23): warning C4251: 'Magick::Montage::_title': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::Montage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(132,30): warning C4251: 'Magick::annotateImage::_text': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::annotateImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(211,23): warning C4251: 'Magick::cdlImage::_cdl': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::cdlImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(271,25): warning C4251: 'Magick::commentImage::_comment': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::commentImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(383,31): warning C4251: 'Magick::drawImage::_drawableList': class 'std::vector<Magick::Drawable,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'Magick::drawImage'
+          with
+          [
+              _Ty=Magick::Drawable
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\Drawable.h(144): message : see declaration of 'std::vector<Magick::Drawable,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=Magick::Drawable
+          ]
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(662,23): warning C4251: 'Magick::labelImage::_label': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::labelImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1292,35): warning C4251: 'Magick::backgroundTextureImage::_backgroundTexture': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::backgroundTextureImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1471,26): warning C4251: 'Magick::fileNameImage::_fileName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fileNameImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1495,22): warning C4251: 'Magick::fontImage::_font': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::fontImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1543,24): warning C4251: 'Magick::magickImage::_magick': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::magickImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Program Files\ImageMagick-7.0.10-Q16\include\Magick++\STL.h(1840,25): warning C4251: 'Magick::x11DisplayImage::_display': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'Magick::x11DisplayImage'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\xstring(4648): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(106,49): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(135,49): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(164,49): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(193,49): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(222,49): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+  Generating Code...
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(71): warning C4715: 'MatReader::getPhysMaterial': not all control paths return a value
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(111): warning C4715: 'MatReader::getDiffuseLocation': not all control paths return a value
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(140): warning C4715: 'MatReader::getNMapLocation': not all control paths return a value
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(169): warning C4715: 'MatReader::getSpecularLocation': not all control paths return a value
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(198): warning C4715: 'MatReader::getHeightLocation': not all control paths return a value
+C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\matReader.cpp(227): warning C4715: 'MatReader::getAlphaLocation': not all control paths return a value
   matReader.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   MaterialTransferTool.vcxproj -> C:\Users\winte\source\repos\MaterialTransferTool\x64\Release\MaterialTransferTool.exe

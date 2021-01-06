@@ -52,8 +52,8 @@ namespace MaterialTransferTool {
 	private: System::Windows::Forms::ProgressBar^ progressBar1;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::GroupBox^ groupBox2;
-	private: System::Windows::Forms::CheckBox^ checkBox2;
-	private: System::Windows::Forms::CheckBox^ checkBox1;
+
+
 	private: System::Windows::Forms::GroupBox^ groupBox3;
 
 	private: System::Windows::Forms::TextBox^ textBox1;
@@ -103,8 +103,6 @@ namespace MaterialTransferTool {
 			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
@@ -188,8 +186,6 @@ namespace MaterialTransferTool {
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->checkBox3);
-			this->groupBox1->Controls->Add(this->checkBox2);
-			this->groupBox1->Controls->Add(this->checkBox1);
 			this->groupBox1->Location = System::Drawing::Point(12, 284);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(346, 101);
@@ -201,32 +197,12 @@ namespace MaterialTransferTool {
 			// checkBox3
 			// 
 			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(6, 65);
+			this->checkBox3->Location = System::Drawing::Point(6, 19);
 			this->checkBox3->Name = L"checkBox3";
 			this->checkBox3->Size = System::Drawing::Size(109, 17);
 			this->checkBox3->TabIndex = 2;
 			this->checkBox3->Text = L"Don\'t write log file";
 			this->checkBox3->UseVisualStyleBackColor = true;
-			// 
-			// checkBox2
-			// 
-			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(6, 42);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(90, 17);
-			this->checkBox2->TabIndex = 1;
-			this->checkBox2->Text = L"Specular only";
-			this->checkBox2->UseVisualStyleBackColor = true;
-			// 
-			// checkBox1
-			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(6, 19);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(80, 17);
-			this->checkBox1->TabIndex = 0;
-			this->checkBox1->Text = L"Resize only";
-			this->checkBox1->UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
 			// 
@@ -398,6 +374,7 @@ namespace MaterialTransferTool {
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"Start";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ToolWindow::button1_Click);
 			// 
 			// ToolWindow
 			// 
@@ -433,42 +410,94 @@ namespace MaterialTransferTool {
 #pragma endregion
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+
 private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	delete pictureBox1->Image;
+	pictureBox1->Image = nullptr;
+	std::remove(material.getHashPath().c_str());
 	MatReader materialReader;
 	OpenFileDialog^ ofd = gcnew OpenFileDialog();
 	ofd->Filter = "HPL Materials(*.mat)|*.mat";
 	if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 	{
+		progressBar1->Value = 0;
 		String^ filename = gcnew String(ofd->FileName);
+		progressBar1->Value = 10;
 		// reads all the .mat file data
 		materialReader.ReadAllLines(msclr::interop::marshal_as<std::string>(filename));
+		progressBar1->Value = 20;
 		// Sets path to Diffuse to textBox1 
 		textBox1->Text = msclr::interop::marshal_as<String^>(materialReader.getAbsoluteFilePath(
 			msclr::interop::marshal_as<std::string>(filename), materialReader.getDiffuseLocation() ));
+		progressBar1->Value = 30;
 		// Sets path to NMap to textBox2
 		textBox2->Text = msclr::interop::marshal_as<String^>(materialReader.getAbsoluteFilePath(
 			msclr::interop::marshal_as<std::string>(filename), materialReader.getNMapLocation()));
+		progressBar1->Value = 40;
 		// Sets path to Specular to textBox3
 		textBox3->Text = msclr::interop::marshal_as<String^>(materialReader.getAbsoluteFilePath(
 			msclr::interop::marshal_as<std::string>(filename), materialReader.getSpecularLocation()));
+		progressBar1->Value = 50;
 		// Sets path to height to textBox4
 		textBox4->Text = msclr::interop::marshal_as<String^>(materialReader.getAbsoluteFilePath(
 			msclr::interop::marshal_as<std::string>(filename), materialReader.getHeightLocation()));
+		progressBar1->Value = 60;
 		// Sets path to Alpha to textBox5
 		textBox5->Text = msclr::interop::marshal_as<String^>(materialReader.getAbsoluteFilePath(
 			msclr::interop::marshal_as<std::string>(filename), materialReader.getAlphaLocation()));
+		progressBar1->Value = 70;
 		// Creates hidden image element to show it in pictureBox
 		material.createHiddenLinkImage(materialReader.getAbsoluteFilePath(
 			msclr::interop::marshal_as<std::string>(filename), materialReader.getDiffuseLocation()));
+		progressBar1->Value = 80;
 		// Setes physical material type to label7 on textBox window
 		label7->Text = msclr::interop::marshal_as<String^>(materialReader.getPhysMaterial());
+		label9->Text = msclr::interop::marshal_as<String^>(material.getImageRes());
+		progressBar1->Value = 90;
 		// Sets prewiev to image box
 		pictureBox1->Image = pictureBox1->Image->FromFile(msclr::interop::marshal_as<String^>(material.getHashPath()));
+		progressBar1->Value = 100;
 	}
 }
 private: System::Void quitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	Application::Exit();
+	delete pictureBox1->Image;
+	pictureBox1->Image = nullptr;
+	std::remove(material.getHashPath().c_str());
+	Application::ExitThread();
 }
 
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	progressBar1->Value = 0;
+	material.UpscaleDiffuseMap(msclr::interop::marshal_as<std::string>(textBox1->Text));
+	progressBar1->Value = 35;
+	material.UpscaleDiffuseMap(msclr::interop::marshal_as<std::string>(textBox2->Text));
+	progressBar1->Value = 65;
+	if (label7->Text == "Rock")
+	{
+		material.MakeSpecularFromDiffuse(msclr::interop::marshal_as<std::string>(textBox1->Text), ROCK);
+		progressBar1->Value = 100;
+	}
+	else if (label7->Text == "Wood")
+	{
+		material.MakeSpecularFromDiffuse(msclr::interop::marshal_as<std::string>(textBox1->Text), WOOD);
+		progressBar1->Value = 100;
+	}
+	else if (label7->Text == "Organic")
+	{
+		material.MakeSpecularFromDiffuse(msclr::interop::marshal_as<std::string>(textBox1->Text), ORGANIC);
+		progressBar1->Value = 100;
+	}
+	else if (label7->Text == "Metal")
+	{
+		material.MakeSpecularFromDiffuse(msclr::interop::marshal_as<std::string>(textBox1->Text), METAL);
+		progressBar1->Value = 100;
+	}
+	else
+	{
+		material.MakeSpecularFromDiffuse(msclr::interop::marshal_as<std::string>(textBox1->Text), DEFAULT);
+		progressBar1->Value = 100;
+	}
+}
 };
 }

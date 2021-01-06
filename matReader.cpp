@@ -16,7 +16,9 @@ string MatReader::getAbsoluteFilePath(string filepath1, string filepath2)
 
 #pragma region filePath2
 	vector<string> seglist;
-
+	for (size_t i{}; i < filepath2.length(); i++)
+		if (filepath2[i] == '\\')
+			filepath2[i] = '/';
 	ssline << filepath2;
 	while (getline(ssline, str_segment, '/'))
 	{
@@ -26,6 +28,12 @@ string MatReader::getAbsoluteFilePath(string filepath1, string filepath2)
 #pragma endregion
 
 
+}
+
+void MatReader::writeLog(string path, string res)
+{
+	string name;
+	ofstream logfile();
 }
 
 void MatReader::ReadAllLines(string mat_file)
@@ -68,9 +76,9 @@ string MatReader::getPhysMaterial()
 	}
 }
 
-void MatReader::textStreamDebug()
+string MatReader::textStreamDebug()
 {
-	cout << text.str();
+	return text.str();
 }
 
 /******************************************\

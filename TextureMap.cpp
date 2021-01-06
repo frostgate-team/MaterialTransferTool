@@ -46,7 +46,7 @@ void TextureMap::MakeSpecularFromDiffuse(string path, const MATERIAL_TYPES flags
 	case 4: // Organic
 		spec.level(ORGANIC_BLACK_C, ORGANIC_WHITE_C, 0.4);
 		break;
-	case 5:
+	case 5: // Metal
 		spec.level(METAL_BLACK_C, METAL_WHITE_C, 0.4);
 		break;
 	}
@@ -72,6 +72,8 @@ void TextureMap::createHiddenLinkImage(string path) // {..\..\..\ex\ex1\ex.dds}
 	stringstream ssline; 
 	string str_segment;
 	vector<string> seglist;
+	xRes = img.columns();
+	yRes = img.rows();
 
 	for (size_t i{}; i < 4; i++) // delete las 4 symbols = {..\..\..\ex\ex1\ex}
 		path.pop_back();
@@ -93,4 +95,9 @@ void TextureMap::createHiddenLinkImage(string path) // {..\..\..\ex\ex1\ex.dds}
 string TextureMap::getHashPath()
 {
 	return hashpath; // return "..\..\..\ex\ex1\~ex.jpg"
+}
+
+string TextureMap::getImageRes()
+{
+	return std::to_string(xRes)+"x"+std::to_string(yRes);
 }

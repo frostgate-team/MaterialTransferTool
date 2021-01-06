@@ -61,7 +61,7 @@ public:
 	/// <summary>
 	/// Prints all stringstream content
 	/// </summary>
-	void textStreamDebug();
+	string textStreamDebug();
 	/// <summary>
 	/// Clear the entire stringstream content
 	/// </summary>
@@ -72,6 +72,8 @@ public:
 	/// <param name="str">- CLI string</param>
 	/// <param name="str2">- std::string path</param>
 	string getAbsoluteFilePath(string str, string str2);
+	
+	void writeLog(string path, string res);
 };
 
 #pragma region Material_type_flags
@@ -94,10 +96,12 @@ class TextureMap
 private:
 	// Converts std::string to LPCWSTR
 	LPCWSTR stdStrignToLPCWSTR(string str);
-
+	// Hash image path here
 	string hashpath;
+	size_t xRes, yRes;
 public:
 	string getHashPath();
+	string getImageRes();
 	/// <summary>
 	/// Makes specular map from Diffuse map
 	/// </summary>
