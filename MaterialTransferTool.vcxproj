@@ -78,8 +78,8 @@
     <LibraryPath>C:\Program Files\ImageMagick-7.0.10-Q16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Program Files\ImageMagick-7.0.10-Q16\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\ImageMagick-7.0.10-Q16\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\ImageMagick\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\winte\source\repos\MaterialTransferTool\MaterialTransferTool\ImageMagick\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -129,13 +129,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="HPLMaterial.cpp" />
+    <ClCompile Include="matlog.cpp" />
     <ClCompile Include="matReader.cpp" />
+    <ClCompile Include="StringConverter.cpp" />
     <ClCompile Include="TextureMap.cpp" />
     <ClCompile Include="ToolWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.h" />
+    <ClInclude Include="HPLMaterial.h" />
     <ClInclude Include="MaterialHandler.h" />
+    <ClInclude Include="matlog.h" />
+    <ClInclude Include="StringConverter.h" />
     <ClInclude Include="ToolWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>

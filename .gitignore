@@ -1,1 +1,10 @@
+/Debug
+/Release
+/x64
+
 commit_file.txt
+.gitignore
+
+*.vcxproj
+*.filters
+*.user

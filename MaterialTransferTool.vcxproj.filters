@@ -24,6 +24,15 @@
     <ClCompile Include="TextureMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="matlog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HPLMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StringConverter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ToolWindow.h">
@@ -33,6 +42,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MaterialHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="matlog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HPLMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

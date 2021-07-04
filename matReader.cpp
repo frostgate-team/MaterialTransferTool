@@ -6,228 +6,111 @@ void MatReader::clearTextStream()
 	text.str("");
 }
 
-string MatReader::getAbsoluteFilePath(string filepath1, string filepath2)
-{
-	string str_segment;
-	stringstream ssline;
-
-	for (size_t i = filepath1.length() - 1; filepath1[i] != '\\'; i--)
-		filepath1.pop_back();
-
-#pragma region filePath2
-	vector<string> seglist;
-	for (size_t i{}; i < filepath2.length(); i++)
-		if (filepath2[i] == '\\')
-			filepath2[i] = '/';
-	ssline << filepath2;
-	while (getline(ssline, str_segment, '/'))
-	{
-		seglist.push_back(str_segment);
-	}
-	return filepath1 + seglist[seglist.size() - 1];
-#pragma endregion
-
-
-}
-
 void MatReader::writeLog(string path, string res)
 {
-	string name;
-	ofstream logfile();
+	ofstream logfile(getDiffuseLocation());
 }
 
 void MatReader::ReadAllLines(string mat_file)
 {
-	ifstream infile(mat_file);
-	string str;
+	ifstream infile(mat_file, ios::in | ios::binary);
 	if (infile.is_open())
 	{
-		ofile = true;
-		while (!infile.eof())
+		text << infile.rdbuf();
+		infile.close();
+	}
+	else { throw exception("[ERROR] file does not exist or corrupted"); };
+	parse();
+}
+
+void MatReader::parse()
+{
+	string line;
+	smatch match;
+	while (text)
+	{
+		getline(text, line);
+		if (regex_search(line, match, regex("<Main")))
 		{
-			getline(infile, str);
-			text << str + "\n";
+			regex_search(line, match, regex("PhysicsMaterial=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
+			this->PhysMaterial = match.str().erase(0, 17);
+		}
+		else if (regex_search(line, match, regex("<Diffuse")))
+		{
+			regex_search(line, match, regex("File=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
+			string reg = match.str().erase(0, 6);
+			regex_search(reg, match, regex("[A-z0-9]+\.[A-z0-9]+$"));
+			this->Diffuse = match.str();
+		}
+		else if (regex_search(line, match, regex("<NMap")))
+		{
+			regex_search(line, match, regex("File=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
+			string reg = match.str().erase(0, 6);
+			regex_search(reg, match, regex("[A-z0-9]+\.[A-z0-9]+$"));
+			this->NMap = match.str();
+		}
+		else if (regex_search(line, match, regex("<Specular")))
+		{
+			regex_search(line, match, regex("File=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
+			string reg = match.str().erase(0, 6);
+			regex_search(reg, match, regex("[A-z0-9]+\.[A-z0-9]+$"));
+			this->Specular = match.str();
+		}
+		else if (regex_search(line, match, regex("<Height")))
+		{
+			regex_search(line, match, regex("File=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
+			string reg = match.str().erase(0, 6);
+			regex_search(reg, match, regex("[A-z0-9]+\.[A-z0-9]+$"));
+			this->Height = match.str();
+		}
+		else if (regex_search(line, match, regex("<Alpha")))
+		{
+			regex_search(line, match, regex("File=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
+			string reg = match.str().erase(0, 6);
+			regex_search(reg, match, regex("[A-z0-9]+\.[A-z0-9]+$"));
+			this->Alpha = match.str();
+		}
+		else if (regex_search(line, match, regex("<Illumination")))
+		{
+			regex_search(line, match, regex("File=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
+			string reg = match.str().erase(0, 6);
+			regex_search(reg, match, regex("[A-z0-9]+\.[A-z0-9]+$"));
+			this->Illumination = match.str();
 		}
 	}
-	else
-		throw exception("[ERROR] file does not exist or corrupted");
 }
 
 string MatReader::getPhysMaterial()
 {
-	text.clear();
-	text.seekg(start);
-	string line;
-	vector<string> seglist;
-	if (ofile == false)
-		throw exception("File not open");
-	while (getline(text, line, '"'))
-	{
-		if (line == " />")
-			break;
-		seglist.push_back(line);
-	}
-	for (size_t i = 1; i < seglist.size(); i++)
-	{
-		if (seglist[i - 1] == " PhysicsMaterial=")
-			return seglist[i];
-		if (i == seglist.size()-1)
-			return "NONE";
-	}
+	return this->PhysMaterial;
 }
-
-string MatReader::textStreamDebug()
-{
-	return text.str();
-}
-
-/******************************************\
-|**************CRUTCH ZONE*****************|
-\******************************************/
-
-//TODO: REMOVE ALL THE CRUTCHES
 
 string MatReader::getDiffuseLocation()
 {
-	text.clear();
-	text.seekg(start);
-	stringstream newline;
-	string line;
-	vector<string> seglist;
-	bool crutch = false;
-	if (ofile == false)
-		throw exception("File not open");
-	while (getline(text, line, '"'))
-	{
-		newline << line;
-		while (getline(newline, line, ' '))
-			seglist.push_back(line);
-		newline.clear();
-		newline.str("");
-	}
-	for (size_t i{}; i < seglist.size(); i++)
-	{
-		if (seglist[i] == "<Diffuse")
-			crutch = true;
-		if (crutch == true & seglist[i - 1] == "File=")
-			return seglist[i];
-		if (i == seglist.size() - 1)
-			return "NONE";
-	}
+	return this->Diffuse;
 }
 
 string MatReader::getNMapLocation()
 {
-	text.clear();
-	text.seekg(start);
-	stringstream newline;
-	string line;
-	vector<string> seglist;
-	bool crutch = false;
-	if (ofile == false)
-		throw exception("File not open");
-	while (getline(text, line, '"'))
-	{
-		newline << line;
-		while (getline(newline, line, ' '))
-			seglist.push_back(line);
-		newline.clear();
-		newline.str("");
-	}
-	for (size_t i{}; i < seglist.size(); i++)
-	{
-		if (seglist[i] == "<NMap")
-			crutch = true;
-		if (crutch == true & seglist[i - 1] == "File=")
-			return seglist[i];
-		if (i == seglist.size() - 1)
-			return "NONE";
-	}
-}
-
-string MatReader::getSpecularLocation()
-{
-	text.clear();
-	text.seekg(start);
-	stringstream newline;
-	string line;
-	vector<string> seglist;
-	bool crutch = false;
-	if (ofile == false)
-		throw exception("File not open");
-	while (getline(text, line, '"'))
-	{
-		newline << line;
-		while (getline(newline, line, ' '))
-			seglist.push_back(line);
-		newline.clear();
-		newline.str("");
-	}
-	for (size_t i{}; i < seglist.size(); i++)
-	{
-		if (seglist[i] == "<Specular")
-			crutch = true;
-		if (crutch == true & seglist[i - 1] == "File=")
-			return seglist[i];
-		if (i == seglist.size() - 1)
-			return "NONE";
-	}
+	return this->NMap;
 }
 
 string MatReader::getHeightLocation()
 {
-	text.clear();
-	text.seekg(start);
-	stringstream newline;
-	string line;
-	vector<string> seglist;
-	bool crutch = false;
-	if (ofile == false)
-		throw exception("File not open");
-	while (getline(text, line, '"'))
-	{
-		newline << line;
-		while (getline(newline, line, ' '))
-			seglist.push_back(line);
-		newline.clear();
-		newline.str("");
-	}
-	for (size_t i{}; i < seglist.size(); i++)
-	{
-		if (seglist[i] == "<Height")
-			crutch = true;
-		if (crutch == true & seglist[i - 1] == "File=")
-			return seglist[i];
-		if (i == seglist.size() - 1)
-			return "NONE";
-	}
+	return this->Height;
+}
+
+string MatReader::getSpecularLocation()
+{
+	return this->Specular;
 }
 
 string MatReader::getAlphaLocation()
 {
-	text.clear();
-	text.seekg(start);
-	stringstream newline;
-	string line;
-	vector<string> seglist;
-	bool crutch = false;
-	if (ofile == false)
-		throw exception("File not open");
-	while (getline(text, line, '"'))
-	{
-		newline << line;
-		while (getline(newline, line, ' '))
-			seglist.push_back(line);
-		newline.clear();
-		newline.str("");
-	}
-	for (size_t i{}; i < seglist.size(); i++)
-	{
-		if (seglist[i] == "<Alpha")
-			crutch = true;
-		if (crutch == true & seglist[i - 1] == "File=")
-			return seglist[i];
-		if (i == seglist.size() - 1)
-			return "NONE";
-	}
+	return this->Alpha;
+}
+
+string MatReader::getIlluminationLocation()
+{
+	return this->Illumination;
 }
