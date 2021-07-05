@@ -34,25 +34,24 @@ class HPLMaterial
 private:
 	std::wstring name			= L"NONE";
 	std::wstring path			= L"NONE";
+	std::wstring type			= L"NONE";
 	std::wstring PhysMaterial	= L"NONE";
 
-	std::wstring Deffuse		= L"NONE";
+	std::wstring Diffuse		= L"NONE";
 	std::wstring NMap			= L"NONE";
 	std::wstring Specular		= L"NONE";
 	std::wstring Height			= L"NONE";
 	std::wstring Alpha			= L"NONE";
 	std::wstring Illumination	= L"NONE";
 
-	std::wstring type			= L"NONE";
-
-	bool use_alpha				= false;
-
 	IMGResolution mRes;
 public:
-	void read(_In_z_ std::wstring path);
+	void setPhysMaterial(_Inout_ std::wstring string) { PhysMaterial = string; };
+	void setMaterialPath(_Inout_ std::wstring string) { path = string; };
+	void setMaterialName(_Inout_ std::wstring string) { name = string; };
+	void setMaterialType(_Inout_ std::wstring string) { type = string; };
 
-
-	void setDeffuse(_Inout_ std::wstring string)		{ Deffuse = string; };
+	void setDiffuse(_Inout_ std::wstring string)		{ Diffuse = string; };
 	void setNMap(_Inout_ std::wstring string)			{ NMap = string; };
 	void setSpecular(_Inout_ std::wstring string)		{ Specular = string; };
 	void setHeight(_Inout_ std::wstring string)			{ Height = string; };
@@ -63,8 +62,9 @@ public:
 	std::wstring getMaterialName()	{ return name; };
 	std::wstring getMaterialPath()	{ return path; };
 	std::wstring getPhysMaterial()	{ return PhysMaterial; };
+	std::wstring getMaterialType()	{ return type; };
 
-	std::wstring getDeffuse()		{ return Deffuse; };
+	std::wstring getDiffuse()		{ return Diffuse; };
 	std::wstring getNMap()			{ return NMap; };
 	std::wstring getSpecular()		{ return Specular; };
 	std::wstring getHeight()		{ return Height; };

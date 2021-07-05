@@ -20,9 +20,5 @@ void IMGResolution::clear()
 
 #pragma region HPLMaterial
 
-void HPLMaterial::read(_In_z_ std::wstring path)
-{
-
-}
 
 #pragma endregion

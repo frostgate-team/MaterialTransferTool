@@ -2,6 +2,7 @@
 
 #include "core.h"
 #include <msclr\marshal_cppstd.h>
+#include "IMGReader.h"
 
 TextureMap material;
 
@@ -528,8 +529,6 @@ namespace MaterialTransferTool {
 private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	try
 	{
-		delete pictureBox1->Image;
-		pictureBox1->Image = nullptr;
 		MatReader materialReader;
 		std::remove(material.getHashPath().c_str());
 		OpenFileDialog^ ofd = gcnew OpenFileDialog();
@@ -552,9 +551,10 @@ private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System:
 			textBox6->Text = StdToSys(materialReader.getIlluminationLocation());
 			textBox7->Text = filename;
 			progressBar1->Value = 70;
-			material.createHiddenLinkImage(getFilePath(SysToStd(filename), materialReader.getDiffuseLocation()));
+			//material.createHiddenLinkImage(getFilePath(SysToStd(filename), materialReader.getDiffuseLocation()));
 			progressBar1->Value = 80;
-			pictureBox1->Image = pictureBox1->Image->FromFile(StdToSys(material.getHashPath()));
+			IMGReader IWICReader(L"G:\\steam games\\SteamApps\\common\\Amnesia The Dark Descent\\static_objects\\sanctumbase\\rock_tileable.dds");
+			pictureBox1->Image = pictureBox1->Image->FromHbitmap((IntPtr)IWICReader.IWICBitmapToHBITMAP());
 			progressBar1->Value = 90;
 			label7->Text = StdToSys(materialReader.getPhysMaterial());
 			label9->Text = StdToSys(material.getImageRes());

@@ -2,10 +2,10 @@
 
 #include <string>
 
-ref class StringConverter
+class StringConverter
 {
 public:
-	std::wstring StringToWide(_In_z_ std::string str);
-	std::string WideToString(_In_z_ std::wstring wide);
+	static std::wstring StringToWide(std::string str);
+	static std::string WideToString(std::wstring wide);
 };
 
