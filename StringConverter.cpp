@@ -1,5 +1,7 @@
 #include "StringConverter.h"
 
+#include <msclr\marshal_cppstd.h>
+
 std::wstring StringConverter::StringToWide(std::string str)
 {
 	std::wstring converted_wide(str.begin(), str.end());

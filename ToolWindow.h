@@ -2,9 +2,9 @@
 
 #include "core.h"
 #include <msclr\marshal_cppstd.h>
-#include "IMGReader.h"
 
 TextureMap material;
+HPLMaterial HplMaterial;
 
 namespace MaterialTransferTool {
 	using namespace System;
@@ -466,6 +466,7 @@ namespace MaterialTransferTool {
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
+			HPLMaterial* HplMaterial = new HPLMaterial;
 		}
 
 		string getFilePath(string mat_filepath, string mat_type)
@@ -489,38 +490,16 @@ namespace MaterialTransferTool {
 			return msclr::interop::marshal_as<System::String^>(stdStr);
 		}
 
-		void writeLog()
+		std::wstring SystemToWide(System::String^ sysString)
 		{
-			std::ofstream logfile;
-			std::string namae = SysToStd(textBox7->Text);
-			std::smatch match;
-
-			regex_search(namae, match, regex("\\w+$"));
-			namae = match.str();
-
-			logfile.open(namae+"log");
-			logfile << "<log>\n";
-			logfile << "\t<info>\n";
-			logfile << "\tmaterial name is: " << namae + "mat\n";
-			logfile << "\tTexture has been upscaled to " << SysToStd(label9->Text) << std::endl;
-			logfile << "\t</info>\n";
-			logfile << "\t<textures>\n";
-			if (textBox1->Text != "NONE" || textBox1->Text != "")
-				logfile << "\t" << SysToStd(textBox1->Text) << std::endl;
-			if (textBox2->Text != "NONE" || textBox2->Text != "")
-				logfile << "\t" << SysToStd(textBox2->Text) << std::endl;
-			if (textBox3->Text != "NONE" || textBox3->Text != "")
-				logfile << "\t" << SysToStd(textBox3->Text) << std::endl;
-			if (textBox4->Text != "NONE" || textBox4->Text != "")
-				logfile << "\t" << SysToStd(textBox4->Text) << std::endl;
-			if (textBox5->Text != "NONE" || textBox5->Text != "")
-				logfile << "\t" << SysToStd(textBox5->Text) << std::endl;
-			if (textBox6->Text != "NONE" || textBox6->Text != "")
-				logfile << "\t" << SysToStd(textBox6->Text) << std::endl;
-			logfile << "\t</textures>\n";
-			logfile << "</log>";
-			logfile.close();
+			return msclr::interop::marshal_as<std::wstring>(sysString);
 		}
+
+		System::String^ WideToSystem(std::wstring wide)
+		{
+			return msclr::interop::marshal_as<System::String^>(wide);
+		}
+
 #pragma endregion
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -529,37 +508,29 @@ namespace MaterialTransferTool {
 private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	try
 	{
-		MatReader materialReader;
-		std::remove(material.getHashPath().c_str());
 		OpenFileDialog^ ofd = gcnew OpenFileDialog();
 		ofd->Filter = "HPL Materials(*.mat)|*.mat";
 		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		{
-			String^ filename = gcnew String(ofd->FileName);
-			materialReader.ReadAllLines(msclr::interop::marshal_as<std::string>(filename));
-			progressBar1->Value = 10;
-			textBox1->Text = StdToSys(materialReader.getDiffuseLocation());
-			progressBar1->Value = 20;
-			textBox2->Text = StdToSys(materialReader.getNMapLocation());
-			progressBar1->Value = 30;
-			textBox3->Text = StdToSys(materialReader.getSpecularLocation());
-			progressBar1->Value = 40;
-			textBox4->Text = StdToSys(materialReader.getHeightLocation());
-			progressBar1->Value = 50;
-			textBox5->Text = StdToSys(materialReader.getAlphaLocation());
-			progressBar1->Value = 60;
-			textBox6->Text = StdToSys(materialReader.getIlluminationLocation());
-			textBox7->Text = filename;
-			progressBar1->Value = 70;
-			//material.createHiddenLinkImage(getFilePath(SysToStd(filename), materialReader.getDiffuseLocation()));
-			progressBar1->Value = 80;
-			IMGReader IWICReader(L"G:\\steam games\\SteamApps\\common\\Amnesia The Dark Descent\\static_objects\\sanctumbase\\rock_tileable.dds");
+			String^ path = gcnew String(ofd->FileName);
+			std::wstring directory = SystemToWide(System::IO::Path::GetDirectoryName(path) + "\\");
+
+			HplMaterial.setMaterialPath(SystemToWide(path));
+			HPLMatReader::read(HplMaterial, SystemToWide(path));
+			textBox1->Text = WideToSystem(HplMaterial.getDiffuse());
+			textBox2->Text = WideToSystem(HplMaterial.getNMap());
+			textBox3->Text = WideToSystem(HplMaterial.getSpecular());
+			textBox4->Text = WideToSystem(HplMaterial.getHeight());
+			textBox5->Text = WideToSystem(HplMaterial.getAlpha());
+			textBox6->Text = WideToSystem(HplMaterial.getIllumination());
+			textBox7->Text = WideToSystem(HplMaterial.getMaterialPath());
+			textBox8->Text = WideToSystem(HplMaterial.getPhysMaterial());
+
+			IMGReader IWICReader((directory + HplMaterial.getDiffuse()).c_str());
 			pictureBox1->Image = pictureBox1->Image->FromHbitmap((IntPtr)IWICReader.IWICBitmapToHBITMAP());
-			progressBar1->Value = 90;
-			label7->Text = StdToSys(materialReader.getPhysMaterial());
-			label9->Text = StdToSys(material.getImageRes());
-			progressBar1->Value = 100;
-			progressBar1->Text = "Ready";
+			HplMaterial.setResolution(IWICReader.getBitmapHeight(), IWICReader.getBitmapWidth());
+			label9->Text = WideToSystem(HplMaterial.getMaterialRes());
+			label7->Text = WideToSystem(HplMaterial.getPhysMaterial());
 		}
 	}
 	catch (const std::exception& ex)
@@ -623,7 +594,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			material.TextureUpscale(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox3->Text)));
 		}
 		progressBar1->Value = 100;
-		writeLog();
+		//writeLog();
 	}
 }
 };

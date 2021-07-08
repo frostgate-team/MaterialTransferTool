@@ -10,12 +10,18 @@ class IMGReader
 {
 	IWICFormatConverter* wConverter;
 
+	UINT BitHeight;
+	UINT BitWidth;
+
 	IMGReader() {};
 public:
 	IMGReader(LPCWSTR path) { load(path); };
 	~IMGReader() { wConverter->Release(); };
 
 	void load(LPCWSTR path);
+
+	UINT getBitmapHeight()	{ return BitHeight; };
+	UINT getBitmapWidth()	{ return BitWidth; };
 
 	HBITMAP IWICBitmapToHBITMAP();
 };

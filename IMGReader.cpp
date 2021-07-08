@@ -1,4 +1,5 @@
 #include "IMGReader.h"
+#include "MTTErrorLogger.h"
 
 #include <vector>
 
@@ -44,19 +45,21 @@ void IMGReader::load(LPCWSTR path)
 		WICBitmapPaletteTypeCustom		// Irrelevant
 	);
 
+	wicConverter->GetSize(&BitHeight, &BitWidth);
+
 	wConverter = wicConverter;
 }
 
 HBITMAP IMGReader::IWICBitmapToHBITMAP()
 {
-	UINT height = 0;
-	UINT width = 0;
+	UINT height	= BitHeight;	// Bitmap height
+	UINT width	= BitWidth;		// Bitmap width
 	wConverter->GetSize(&width, &height);
 
 	std::vector<BYTE> buffer(width * height * 4);
 	wConverter->CopyPixels(0, width * 4, buffer.size(), buffer.data());
 
-	HBITMAP bitmap = CreateBitmap(width, height, 1, 32, buffer.data());
+	HBITMAP bitmap = CreateBitmap(width, height, 1, 32, buffer.data()); // Create bitmap from IWICBitmap data
 
 	return bitmap;
 }

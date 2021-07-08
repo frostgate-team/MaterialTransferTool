@@ -31,7 +31,7 @@ std::wstring HPLMatReader::parseTextureUnits(std::string param, std::string line
 	return StringConverter::StringToWide(reg_match.str().erase(0, rxSize));
 }
 
-void HPLMatReader::read(HPLMaterial mat, std::wstring path)
+void HPLMatReader::read(HPLMaterial& mat, std::wstring path)
 {
 	std::ifstream matfile(path);
 	std::string str_line;
@@ -41,7 +41,7 @@ void HPLMatReader::read(HPLMaterial mat, std::wstring path)
 	{
 		if (std::regex_search(str_line, match, std::regex("<Main")))
 		{
-			mat.setPhysMaterial(parseGeneralInfo("PhysMaterial", str_line));
+			mat.setPhysMaterial(parseGeneralInfo("PhysicsMaterial", str_line));
 			mat.setMaterialType(parseGeneralInfo("Type", str_line));
 		}
 		if (std::regex_search(str_line, match, std::regex("<Diffuse")))
