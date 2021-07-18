@@ -8,7 +8,7 @@ std::wstring HPLMatReader::parseGeneralInfo(std::string regex, std::string line)
 	std::smatch reg_match;
 
 	std::regex_search(line, reg_match, std::regex(regex));
-	rxSize = reg_match.str().size() + 2;
+	rxSize = static_cast<uint>(reg_match.str().size()) + 2;
 	std::regex_search(line, reg_match, std::regex(regex+"=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
 
 	return StringConverter::StringToWide(reg_match.str().erase(0,rxSize));
@@ -20,7 +20,7 @@ std::wstring HPLMatReader::parseTextureUnits(std::string param, std::string line
 	std::smatch reg_match;
 
 	std::regex_search(line, reg_match, std::regex(param));
-	rxSize = reg_match.str().size() + 2;
+	rxSize = static_cast<uint>(reg_match.str().size()) + 2;
 	std::regex_search(line, reg_match, std::regex(param+"=\"[A-z0-9|.|/|:|\\|-|+| ]+"));
 	if (param == "File") {
 		line = reg_match.str().erase(0, rxSize);
@@ -31,7 +31,7 @@ std::wstring HPLMatReader::parseTextureUnits(std::string param, std::string line
 	return StringConverter::StringToWide(reg_match.str().erase(0, rxSize));
 }
 
-void HPLMatReader::read(HPLMaterial& mat, std::wstring path)
+void HPLMatReader::read(_Inout_ HPLMaterial& mat, _In_ std::wstring path)
 {
 	std::ifstream matfile(path);
 	std::string str_line;

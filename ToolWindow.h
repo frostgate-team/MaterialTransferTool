@@ -108,6 +108,8 @@ namespace MaterialTransferTool {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
@@ -129,8 +131,6 @@ namespace MaterialTransferTool {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -160,20 +160,20 @@ namespace MaterialTransferTool {
 			// newToolStripMenuItem
 			// 
 			this->newToolStripMenuItem->Name = L"newToolStripMenuItem";
-			this->newToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->newToolStripMenuItem->Size = System::Drawing::Size(107, 22);
 			this->newToolStripMenuItem->Text = L"Open";
 			this->newToolStripMenuItem->Click += gcnew System::EventHandler(this, &ToolWindow::newToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem
 			// 
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(107, 22);
 			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// quitToolStripMenuItem
 			// 
 			this->quitToolStripMenuItem->Name = L"quitToolStripMenuItem";
-			this->quitToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->quitToolStripMenuItem->Size = System::Drawing::Size(107, 22);
 			this->quitToolStripMenuItem->Text = L"Quit";
 			this->quitToolStripMenuItem->Click += gcnew System::EventHandler(this, &ToolWindow::quitToolStripMenuItem_Click);
 			// 
@@ -207,6 +207,23 @@ namespace MaterialTransferTool {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Parameters";
 			this->groupBox1->Enter += gcnew System::EventHandler(this, &ToolWindow::groupBox1_Enter);
+			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(89, 64);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->ReadOnly = true;
+			this->textBox8->Size = System::Drawing::Size(251, 20);
+			this->textBox8->TabIndex = 15;
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(6, 67);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(79, 13);
+			this->label10->TabIndex = 4;
+			this->label10->Text = L"Material List file";
 			// 
 			// checkBox1
 			// 
@@ -419,23 +436,6 @@ namespace MaterialTransferTool {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &ToolWindow::button1_Click);
 			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(6, 67);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(79, 13);
-			this->label10->TabIndex = 4;
-			this->label10->Text = L"Material List file";
-			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(89, 64);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->ReadOnly = true;
-			this->textBox8->Size = System::Drawing::Size(251, 20);
-			this->textBox8->TabIndex = 15;
-			// 
 			// ToolWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -466,7 +466,6 @@ namespace MaterialTransferTool {
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
-			HPLMaterial* HplMaterial = new HPLMaterial;
 		}
 
 		string getFilePath(string mat_filepath, string mat_type)
@@ -513,7 +512,8 @@ private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System:
 		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK)
 		{
 			String^ path = gcnew String(ofd->FileName);
-			std::wstring directory = SystemToWide(System::IO::Path::GetDirectoryName(path) + "\\");
+			std::wstring directory = SystemToWide(System::IO::Path::GetDirectoryName(path) + "\\");	
+			HplMaterial.setFileDirectory(directory);
 
 			HplMaterial.setMaterialPath(SystemToWide(path));
 			HPLMatReader::read(HplMaterial, SystemToWide(path));
@@ -524,77 +524,34 @@ private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System:
 			textBox5->Text = WideToSystem(HplMaterial.getAlpha());
 			textBox6->Text = WideToSystem(HplMaterial.getIllumination());
 			textBox7->Text = WideToSystem(HplMaterial.getMaterialPath());
-			textBox8->Text = WideToSystem(HplMaterial.getPhysMaterial());
+			textBox8->Text = WideToSystem(HplMaterial.getFileDirectory() + HplMaterial.getDiffuse());
 
-			IMGReader IWICReader((directory + HplMaterial.getDiffuse()).c_str());
+			IMGReader IWICReader((HplMaterial.getFileDirectory() + HplMaterial.getDiffuse()).c_str());
 			pictureBox1->Image = pictureBox1->Image->FromHbitmap((IntPtr)IWICReader.IWICBitmapToHBITMAP());
 			HplMaterial.setResolution(IWICReader.getBitmapHeight(), IWICReader.getBitmapWidth());
+			
 			label9->Text = WideToSystem(HplMaterial.getMaterialRes());
 			label7->Text = WideToSystem(HplMaterial.getPhysMaterial());
 		}
 	}
 	catch (const std::exception& ex)
 	{
-		//String^ exception = msclr::interop::marshal_as<String^>(ex.what());
 		MessageBox::Show(StdToSys(ex.what()), "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
+
 private: System::Void quitToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	delete pictureBox1->Image;
-	pictureBox1->Image = nullptr;
-	std::remove(material.getHashPath().c_str());
 	Application::ExitThread();
 }
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	string label = msclr::interop::marshal_as<std::string>(label7->Text);
-	smatch match;
-
-	if (textBox1->Text != "NONE" && textBox1->Text != "") { 
-		material.TextureUpscale(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox1->Text))); progressBar1->Value = 10; }
-	if (textBox2->Text != "NONE" && textBox2->Text != "") {
-		material.TextureUpscale(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox2->Text))); progressBar1->Value = 20; }
-	if (textBox5->Text != "NONE" && textBox5->Text != "") {
-		material.TextureUpscale(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox5->Text))); progressBar1->Value = 25; }
-	if (textBox6->Text != "NONE" && textBox6->Text != "") {
-		material.TextureUpscale(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox6->Text))); progressBar1->Value = 30; }
-
-
-	if (!checkBox1->Checked)
+	try
 	{
-		if (regex_search(label, match, regex("Rock")) || regex_search(label, match, regex("rock")))
-		{
-			material.MakeSpecularFromDiffuse(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox1->Text)), ROCK);
-			progressBar1->Value = 100;
-		}
-		else if (regex_search(label, match, regex("Wood")) || regex_search(label, match, regex("wood")))
-		{
-			material.MakeSpecularFromDiffuse(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox1->Text)), WOOD);
-			progressBar1->Value = 100;
-		}
-		else if (regex_search(label, match, regex("Organic")) || regex_search(label, match, regex("organic")))
-		{
-			material.MakeSpecularFromDiffuse(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox1->Text)), ORGANIC);
-			progressBar1->Value = 100;
-		}
-		else if (regex_search(label, match, regex("Metal")) || regex_search(label, match, regex("metal")))
-		{
-			material.MakeSpecularFromDiffuse(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox1->Text)), ROCK);
-			progressBar1->Value = 100;
-		}
-		else
-		{
-			material.MakeSpecularFromDiffuse(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox1->Text)), DEFAULT);
-			progressBar1->Value = 100;
-		}
+		TextureHandler::TextureUpscale(HplMaterial);
 	}
-	else
+	catch (const std::exception& ex)
 	{
-		if (textBox3->Text != "NONE" || textBox3->Text != "") {
-			material.TextureUpscale(getFilePath(SysToStd(textBox7->Text), SysToStd(textBox3->Text)));
-		}
-		progressBar1->Value = 100;
-		//writeLog();
+		MessageBox::Show(StdToSys(ex.what()), "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
 };

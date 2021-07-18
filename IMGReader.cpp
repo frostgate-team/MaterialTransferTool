@@ -1,43 +1,40 @@
 #include "IMGReader.h"
 #include "MTTErrorLogger.h"
 
+#include <filesystem>
 #include <vector>
 
 void IMGReader::load(LPCWSTR path)
 {
-	HRESULT hr;		// For checking errors
+	HRESULT hr;
 
-	// Craete WIC factory
-	IWICImagingFactory* wicFactory = NULL;
+	m_pImagingFactory	= NULL;
+	m_pBitmapDecoder	= NULL;
+	m_pFrameDecoder		= NULL;
+	m_pConverter		= NULL;
+
 	hr = CoCreateInstance(
 		CLSID_WICImagingFactory,	// CLS ID of the object making
 		NULL,						// Not part of agregate 
 		CLSCTX_INPROC_SERVER,		// DLL runs in the same process
 		IID_IWICImagingFactory,		// Ref to interface that communicates with the object
-		(LPVOID*)&wicFactory		// The pointer that'll contain factory
+		(LPVOID*)&m_pImagingFactory	// The pointer that'll contain factory
 	);
 
-	// Create decoder
-	IWICBitmapDecoder* wicDecoder = NULL;
-	hr = wicFactory->CreateDecoderFromFilename(
+	hr = m_pImagingFactory->CreateDecoderFromFilename(
 		path,							// Path to reading file
 		NULL,							// No preferred vendor
 		GENERIC_READ,					// Reading file
 		WICDecodeMetadataCacheOnLoad,	// Cache on load 
-		&wicDecoder						// Making decoder
+		&m_pBitmapDecoder				// Making decoder
 	);
 
-	// Read frame from the image
-	IWICBitmapFrameDecode* wicFrame = NULL;
-	hr = wicDecoder->GetFrame(0, &wicFrame);
+	hr = m_pBitmapDecoder->GetFrame(0, &m_pFrameDecoder);
 
-	//Create converter
-	IWICFormatConverter* wicConverter = NULL;
-	hr = wicFactory->CreateFormatConverter(&wicConverter);
+	hr = m_pImagingFactory->CreateFormatConverter(&m_pConverter);
 
-	// Setup the converter
-	hr = wicConverter->Initialize(
-		wicFrame,						// Frame
+	hr = m_pConverter->Initialize(
+		m_pFrameDecoder,				// Frame
 		GUID_WICPixelFormat32bppPBGRA,	// Pixel format
 		WICBitmapDitherTypeNone,		// Irrelevant
 		NULL,							// No palette needed, irrelevant
@@ -45,21 +42,36 @@ void IMGReader::load(LPCWSTR path)
 		WICBitmapPaletteTypeCustom		// Irrelevant
 	);
 
-	wicConverter->GetSize(&BitHeight, &BitWidth);
+	this->m_pConverter->GetSize(&BitHeight, &BitWidth);
+}
 
-	wConverter = wicConverter;
+void IMGReader::clean()
+{
+	BitHeight = BitWidth = 0;
+
+	SafeRelease(&m_pConverter);
+	SafeRelease(&m_pFrameDecoder);
+	SafeRelease(&m_pBitmapDecoder);
 }
 
 HBITMAP IMGReader::IWICBitmapToHBITMAP()
 {
 	UINT height	= BitHeight;	// Bitmap height
 	UINT width	= BitWidth;		// Bitmap width
-	wConverter->GetSize(&width, &height);
+	m_pConverter->GetSize(&width, &height);
 
 	std::vector<BYTE> buffer(width * height * 4);
-	wConverter->CopyPixels(0, width * 4, buffer.size(), buffer.data());
+	m_pConverter->CopyPixels(0, width * 4, buffer.size(), buffer.data());
 
 	HBITMAP bitmap = CreateBitmap(width, height, 1, 32, buffer.data()); // Create bitmap from IWICBitmap data
 
 	return bitmap;
+}
+
+BOOLEAN IMGReader::pathExist(LPCWSTR path)
+{
+	if (std::filesystem::exists(path)) {
+		return true;
+	}
+	return false;
 }

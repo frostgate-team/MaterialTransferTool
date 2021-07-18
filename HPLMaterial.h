@@ -1,3 +1,7 @@
+/*
+* This is the class header file describing the HPL Engine material.
+* We use it to store information provided by .mat files.
+*/
 #pragma once
 
 #include <ostream>
@@ -20,6 +24,7 @@ public:
 	void clear();
 
 	std::wstring to_wstring() { return StringConverter::StringToWide(std::to_string(height) + "x" + std::to_string(width)); };
+	std::string to_string() { return std::to_string(height) + "x" + std::to_string(width); };
 
 	uint getHeight()	{ return height; };
 	uint getWidth()		{ return width; };
@@ -34,8 +39,11 @@ public:
 class HPLMaterial
 {
 private:
+	// NOTE: Please note that by default all parameters should be "NONE"
+
 	std::wstring name			= L"NONE";
 	std::wstring path			= L"NONE";
+	std::wstring directory		= L"NONE";
 	std::wstring type			= L"NONE";
 	std::wstring PhysMaterial	= L"NONE";
 
@@ -50,6 +58,7 @@ private:
 
 	IMGResolution mRes;
 public:
+	// HPLMaterial seters
 	void setPhysMaterial(_Inout_ std::wstring string)		{ PhysMaterial = string; };
 	void setMaterialPath(_Inout_ std::wstring string)		{ path = string; };
 	void setMaterialName(_Inout_ std::wstring string)		{ name = string; };
@@ -64,7 +73,10 @@ public:
 	void setAlpha(_Inout_ std::wstring string)			{ Alpha = string; };
 	void setIllumination(_Inout_ std::wstring string)	{ Illumination = string; };
 
+	void setFileDirectory(_Inout_ std::wstring string)	{ directory = string; };
 
+
+	// HPLMaterial geters
 	std::wstring getMaterialName()		{ return name; };
 	std::wstring getMaterialPath()		{ return path; };
 	std::wstring getPhysMaterial()		{ return PhysMaterial; };
@@ -78,5 +90,7 @@ public:
 	std::wstring getHeight()		{ return Height; };
 	std::wstring getAlpha()			{ return Alpha; };
 	std::wstring getIllumination()	{ return Illumination; };
+
+	std::wstring getFileDirectory() { return directory; };
 };
 
