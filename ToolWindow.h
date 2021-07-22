@@ -3,7 +3,6 @@
 #include "core.h"
 #include <msclr\marshal_cppstd.h>
 
-TextureMap material;
 HPLMaterial HplMaterial;
 
 namespace MaterialTransferTool {
@@ -46,7 +45,7 @@ namespace MaterialTransferTool {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ fIleToolStripMenuItem1;
 	private: System::Windows::Forms::ToolStripMenuItem^ newToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ aboutToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripMenuItem^ quitToolStripMenuItem;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
@@ -69,7 +68,7 @@ namespace MaterialTransferTool {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::CheckBox^ checkBox3;
+
 
 
 
@@ -80,8 +79,8 @@ namespace MaterialTransferTool {
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::Label^ label10;
+
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -103,15 +102,11 @@ namespace MaterialTransferTool {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->fIleToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->newToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->quitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
@@ -149,9 +144,9 @@ namespace MaterialTransferTool {
 			// 
 			// fIleToolStripMenuItem1
 			// 
-			this->fIleToolStripMenuItem1->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->fIleToolStripMenuItem1->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->newToolStripMenuItem,
-					this->aboutToolStripMenuItem, this->quitToolStripMenuItem
+					this->quitToolStripMenuItem
 			});
 			this->fIleToolStripMenuItem1->Name = L"fIleToolStripMenuItem1";
 			this->fIleToolStripMenuItem1->Size = System::Drawing::Size(37, 20);
@@ -160,20 +155,14 @@ namespace MaterialTransferTool {
 			// newToolStripMenuItem
 			// 
 			this->newToolStripMenuItem->Name = L"newToolStripMenuItem";
-			this->newToolStripMenuItem->Size = System::Drawing::Size(107, 22);
+			this->newToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->newToolStripMenuItem->Text = L"Open";
 			this->newToolStripMenuItem->Click += gcnew System::EventHandler(this, &ToolWindow::newToolStripMenuItem_Click);
-			// 
-			// aboutToolStripMenuItem
-			// 
-			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(107, 22);
-			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// quitToolStripMenuItem
 			// 
 			this->quitToolStripMenuItem->Name = L"quitToolStripMenuItem";
-			this->quitToolStripMenuItem->Size = System::Drawing::Size(107, 22);
+			this->quitToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->quitToolStripMenuItem->Text = L"Quit";
 			this->quitToolStripMenuItem->Click += gcnew System::EventHandler(this, &ToolWindow::quitToolStripMenuItem_Click);
 			// 
@@ -196,10 +185,7 @@ namespace MaterialTransferTool {
 			// 
 			// groupBox1
 			// 
-			this->groupBox1->Controls->Add(this->textBox8);
-			this->groupBox1->Controls->Add(this->label10);
 			this->groupBox1->Controls->Add(this->checkBox1);
-			this->groupBox1->Controls->Add(this->checkBox3);
 			this->groupBox1->Location = System::Drawing::Point(12, 284);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(346, 101);
@@ -208,42 +194,15 @@ namespace MaterialTransferTool {
 			this->groupBox1->Text = L"Parameters";
 			this->groupBox1->Enter += gcnew System::EventHandler(this, &ToolWindow::groupBox1_Enter);
 			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(89, 64);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->ReadOnly = true;
-			this->textBox8->Size = System::Drawing::Size(251, 20);
-			this->textBox8->TabIndex = 15;
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(6, 67);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(79, 13);
-			this->label10->TabIndex = 4;
-			this->label10->Text = L"Material List file";
-			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(6, 43);
+			this->checkBox1->Location = System::Drawing::Point(6, 19);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(136, 17);
 			this->checkBox1->TabIndex = 3;
 			this->checkBox1->Text = L"Not to do specular map";
 			this->checkBox1->UseVisualStyleBackColor = true;
-			// 
-			// checkBox3
-			// 
-			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(6, 19);
-			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(109, 17);
-			this->checkBox3->TabIndex = 2;
-			this->checkBox3->Text = L"Don\'t write log file";
-			this->checkBox3->UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
 			// 
@@ -468,18 +427,7 @@ namespace MaterialTransferTool {
 
 		}
 
-		string getFilePath(string mat_filepath, string mat_type)
-		{
-			for (size_t i = mat_filepath.length() - 1; i != 0; i--)
-			{
-				if (mat_filepath[i] == '\\')
-					return mat_filepath + mat_type;
-				mat_filepath.pop_back();
-			}
-			return mat_filepath + mat_type;
-		}
-
-		string SysToStd(System::String^ sysString)
+		std::string SysToStd(System::String^ sysString)
 		{
 			return msclr::interop::marshal_as<std::string>(sysString);
 		}
@@ -513,6 +461,10 @@ private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System:
 		{
 			String^ path = gcnew String(ofd->FileName);
 			std::wstring directory = SystemToWide(System::IO::Path::GetDirectoryName(path) + "\\");	
+
+			progressBar1->Value = 0;
+
+			HplMaterial.clean();
 			HplMaterial.setFileDirectory(directory);
 
 			HplMaterial.setMaterialPath(SystemToWide(path));
@@ -524,14 +476,19 @@ private: System::Void newToolStripMenuItem_Click(System::Object^ sender, System:
 			textBox5->Text = WideToSystem(HplMaterial.getAlpha());
 			textBox6->Text = WideToSystem(HplMaterial.getIllumination());
 			textBox7->Text = WideToSystem(HplMaterial.getMaterialPath());
-			textBox8->Text = WideToSystem(HplMaterial.getFileDirectory() + HplMaterial.getDiffuse());
+
+			progressBar1->Value = 50;
 
 			IMGReader IWICReader((HplMaterial.getFileDirectory() + HplMaterial.getDiffuse()).c_str());
 			pictureBox1->Image = pictureBox1->Image->FromHbitmap((IntPtr)IWICReader.IWICBitmapToHBITMAP());
 			HplMaterial.setResolution(IWICReader.getBitmapHeight(), IWICReader.getBitmapWidth());
 			
+			progressBar1->Value = 80;
+
 			label9->Text = WideToSystem(HplMaterial.getMaterialRes());
 			label7->Text = WideToSystem(HplMaterial.getPhysMaterial());
+
+			progressBar1->Value = 100;
 		}
 	}
 	catch (const std::exception& ex)
@@ -547,7 +504,20 @@ private: System::Void quitToolStripMenuItem_Click(System::Object^ sender, System
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	try
 	{
-		TextureHandler::TextureUpscale(HplMaterial);
+		progressBar1->Value = 0;
+		if (checkBox1->Checked) {
+			TextureHandler::TextureUpscale(HplMaterial);
+			progressBar1->Value = 100;
+		}
+		else
+		{
+			TextureHandler::TextureUpscale(HplMaterial);
+			progressBar1->Value = 50;
+			TextureHandler::MakeSpecularFromDiffuse(HplMaterial, TextureHandler::autoDetectFlags(HplMaterial));
+			progressBar1->Value = 100;
+		}
+
+		progressBar1->Value = 0;
 	}
 	catch (const std::exception& ex)
 	{

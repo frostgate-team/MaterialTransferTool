@@ -1,3 +1,7 @@
+/*
+* This is the StringConverter module
+* It use to convert different types of strings
+*/
 #pragma once
 
 #include <string>

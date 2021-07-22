@@ -39,10 +39,16 @@ public:
 class HPLMaterial
 {
 private:
-	// NOTE: Please note that by default all parameters should be "NONE"
+	// NOTE: Note that by default all parameters should be "NONE"
 
 	std::wstring name			= L"NONE";
+	/// <summary>
+	/// Full path to file
+	/// </summary>
 	std::wstring path			= L"NONE";
+	/// <summary>
+	/// Path to file derectory (without material name)
+	/// </summary>
 	std::wstring directory		= L"NONE";
 	std::wstring type			= L"NONE";
 	std::wstring PhysMaterial	= L"NONE";
@@ -92,5 +98,8 @@ public:
 	std::wstring getIllumination()	{ return Illumination; };
 
 	std::wstring getFileDirectory() { return directory; };
+
+	// HPLMaterial functions
+	void clean();
 };
 

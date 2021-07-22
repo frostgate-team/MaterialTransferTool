@@ -1,5 +1,6 @@
 /*
 * This is the images format decoding class
+* It's using to convert images to format need for PictureBox
 */
 #pragma once
 
@@ -20,6 +21,11 @@ class IMGReader
 	UINT BitHeight;
 	UINT BitWidth;
 
+	/// <summary>
+	/// Check if path to given file exists
+	/// </summary>
+	/// <param name="path"> - path to file</param>
+	/// <returns>true if exist</returns>
 	BOOLEAN pathExist(LPCWSTR path);
 
 	IMGReader() {};

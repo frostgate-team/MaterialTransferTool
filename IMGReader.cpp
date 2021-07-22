@@ -8,6 +8,8 @@ void IMGReader::load(LPCWSTR path)
 {
 	HRESULT hr;
 
+	if (!pathExist(path)) { path = L"nodata.jpg"; }; // Check if image really exist in this derectory
+
 	m_pImagingFactory	= NULL;
 	m_pBitmapDecoder	= NULL;
 	m_pFrameDecoder		= NULL;
@@ -63,7 +65,7 @@ HBITMAP IMGReader::IWICBitmapToHBITMAP()
 	std::vector<BYTE> buffer(width * height * 4);
 	m_pConverter->CopyPixels(0, width * 4, buffer.size(), buffer.data());
 
-	HBITMAP bitmap = CreateBitmap(width, height, 1, 32, buffer.data()); // Create bitmap from IWICBitmap data
+	HBITMAP bitmap = CreateBitmap(width, height, 1, 32, buffer.data()); // Creating bitmap from IWICBitmap data
 
 	return bitmap;
 }
